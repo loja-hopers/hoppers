@@ -1,3 +1,10 @@
+<style>
+  .logo{
+    width: 130px;
+    height: 130px;
+}
+</style>
+
 <footer class="page-footer black">
 
 <br>
@@ -5,7 +12,7 @@
 <div class="container">
     <div class="row">
         <div class="col l6 s12">
-          <img src="imagens/image2.png" alt="">
+          <img src="imagens/logoAnselmobranca.png" alt="" class="logo">
                 
           <p class="grey-text text-lighten-4">As melhores roupas com os melhores preços</p>
               

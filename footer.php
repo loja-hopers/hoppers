@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col l6 s12">
-          <h5 id="fot" class="white-text">Hoppers</h5>
+          <img src="imagens/image2.png" alt="">
                 
           <p class="grey-text text-lighten-4">As melhores roupas com os melhores preços</p>
               

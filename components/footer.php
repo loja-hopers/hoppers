@@ -1,9 +1,5 @@
-<style>
-  .logo{
-    width: 130px;
-    height: 130px;
-}
-</style>
+<link rel="stylesheet" href="css/estilos.css">
+
 
 <footer class="page-footer black">
 
@@ -12,7 +8,7 @@
 <div class="container">
     <div class="row">
         <div class="col l6 s12">
-          <img src="imagens/logoAnselmobranca.png" alt="" class="logo">
+          <img src="../img/elipse1.png" alt="" class="logo">
                 
           <p class="grey-text text-lighten-4">As melhores roupas com os melhores preços</p>
               

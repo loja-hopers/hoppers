@@ -1,14 +1,14 @@
 <?php
-include_once 'cabecalho.php';
-include_once 'conexao.php';
+include_once '../components/header.php';
+include_once '../factory/conexao.php';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Hoppers</title>
     
@@ -25,7 +25,7 @@ include_once 'conexao.php';
             echo "<div class='col s12 m4'>";
             echo "<div class='card'>";
             echo "<div class='card-image'>";
-            echo "<img src='imagens/{$linha['proImagem']}.webp'><br>";
+            echo "<img src='../img/{$linha['proImagem']}.webp'><br>";
             echo "</div>";
             echo "<div class='card-content'>";
             echo "<p>{$linha['proDescricao']}</p>";
@@ -33,8 +33,7 @@ include_once 'conexao.php';
             echo "<div class='card-action'>";
             // Adicionando o código do produto como parâmetro no link
             echo "<p class='preco'>R$"."{$linha['proPreco']}</p>";
-            echo "<a href='carrinho.php?codigo={$linha['proId']}' class='btn'>Comprar";
-            echo "<i class='small material-icons'>local_grocery_store</i></a>";
+            echo "<a href='carrinho.php?codigo={$linha['proId']}' class='btn'>Comprar</a>";
 
             echo "</div>";
             echo "</div>";
@@ -52,7 +51,7 @@ include_once 'conexao.php';
         ?>
     </div>
 
-    <?php include_once "footer.php"; ?>
+    <?php include_once "../components/footer.php"; ?>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>

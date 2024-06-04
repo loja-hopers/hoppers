@@ -6,8 +6,8 @@ img {
 }
 
 .logo{
-    width: 50px;
-    height: 50px;
+    width: 130px;
+    height: 130px;
 }
 
 .imagem-container {
@@ -121,6 +121,10 @@ p {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+p#noprod{
+    font-size: 30px;
+}
+
 #contcompra {
     padding: 0.5%;
     background-color: #ffffff;
@@ -144,9 +148,6 @@ p {
 }
 
 #carrinho {
+    height: 100bh;
     margin-bottom: 5%;
-}
-
-#cad {
-    
 }

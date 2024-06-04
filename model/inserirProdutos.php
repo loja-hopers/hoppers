@@ -1,5 +1,5 @@
 <?php
-require_once('conexao.php');
+require_once('../factory/conexao.php');
 
 // Array de produtos a serem inseridos
 $produtos = array(

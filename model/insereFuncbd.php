@@ -1,6 +1,6 @@
 <?php
 
-require_once 'conexao.php';
+require_once 'factory/conexao.php';
 
 // Validar e escapar valores
 $id = htmlspecialchars($_POST['id']);

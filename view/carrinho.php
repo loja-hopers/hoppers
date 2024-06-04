@@ -1,6 +1,6 @@
 <?php
-include_once "cabecalho.php";
-include_once "conexao.php";
+include_once "../components/header.php";
+include_once "../factory/conexao.php";
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ include_once "conexao.php";
    <meta charset="UTF-8">
    <!-- Compiled and minified CSS -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-   <link rel="stylesheet" href="css/estilos.css">
+   <link rel="stylesheet" href="../css/estilos.css">
    <!--Import Google Icon Font-->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <title>Carrinho</title>
@@ -56,6 +56,11 @@ include_once "conexao.php";
 
             $stmt = $conn->prepare($sql);
             $stmt->execute();
+            if ($stmt->rowCount() == 0) {
+                echo "<div class='col s12 m4 center'>";
+                echo '<p id="noprod">Não há produtos</p>';
+                echo "</div>";
+            }
             while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
             ?>
                 <li class="collection-item">
@@ -67,14 +72,18 @@ include_once "conexao.php";
             <?php } ?>
         </ul>
 
+        <br> <br>
+        <a id="contcompra" href="../index.php">Continuar comprando</a>
     </div>
-    <br> <br>
+    
 
-    <a id="contcompra" href="listaProdutos.php">Continuar comprando</a>
-    <?php include_once "footer.php"; ?>
+    
+    <?php include_once "../components/footer.php"; ?>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+
+ 
 </body>
 
 </html>

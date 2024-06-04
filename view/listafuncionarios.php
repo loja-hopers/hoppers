@@ -1,6 +1,6 @@
 <?php
-include_once 'cabecalho.php';
-include_once 'conexao.php';
+include_once '../components/header.php';
+include_once '../factory/conexao.php';
 
 echo "<h1 class='center-align'>Consultando Funcionários</h1>";
 
@@ -19,7 +19,7 @@ $consulta->execute();
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Funcionários</title>
     <style>
@@ -104,7 +104,7 @@ $consulta->execute();
         </form>
     </div>
 
-    <?php include_once "footer.php"; ?>
+    <?php include_once "../components/footer.php"; ?>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>

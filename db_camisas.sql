@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Estrutura para tabela `tabcarrinho`
 --
 
-CREATE TABLE `tabcarrinho` (
+CREATE TABLE `historico` (
   `carId` int(11) NOT NULL,
   `carProId` int(11) NOT NULL,
   `carQtde` int(11) DEFAULT NULL

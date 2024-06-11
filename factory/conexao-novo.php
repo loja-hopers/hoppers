@@ -1,5 +1,5 @@
 <?php
-class Caminho{
+class Conexao{
 
         public static $usuario = "root";
         public static $senha = "";

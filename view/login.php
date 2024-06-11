@@ -1,29 +1,3 @@
-<?php
-include_once '../components/header.php';
-include_once '../factory/conexao.php';
-
-// Verifica se o formulário foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verifica as credenciais
-    $usuario = $_POST['usuario'];
-    $senha = $_POST['senha'];
-
-    $sql = "SELECT * FROM tabfuncionarios WHERE funUsuario = :usuario AND funSenha = :senha";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':usuario', $usuario);
-    $stmt->bindParam(':senha', $senha);
-    $stmt->execute();
-
-    // Se as credenciais estiverem corretas, redireciona para a página principal
-    if ($stmt->rowCount() > 0) {
-        header('Location: listafuncionarios.php');
-        exit;
-    } else {
-        $mensagemErro = "Credenciais inválidas. Tente novamente.";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -91,6 +65,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
+
+
+    <?php include_once '../components/header.php'; ?>
+
     <div class="container">
         <div id="cad" class="card">
             <h3>Login</h3>

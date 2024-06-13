@@ -1,5 +1,6 @@
 <?php
     include_once '../factory/conexao.php';
+    include_once "../control/funcionario.php";
 
     $dados = new Funcionario;
 

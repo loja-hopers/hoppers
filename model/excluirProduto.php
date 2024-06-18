@@ -4,7 +4,7 @@
 
     $dados = new Produto;
 
-    $dados->setId($_POST["cxid"]);
+    $dados->setId($_GET['id']);
 
     $id = $dados->getId();
 

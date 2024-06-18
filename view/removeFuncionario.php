@@ -81,6 +81,7 @@ $idFuncionario = $_SESSION['id'];
         <div class='row'>
             <?php include_once '../model/listarFuncionarios.php'; ?>
         </div>
+
     </div>
     
 

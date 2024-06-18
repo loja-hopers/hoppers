@@ -22,12 +22,18 @@
 
     if($dados->getId() != ""){
        $conn = new Conexao;
-       $query = "update from produto where id='$id'";
+       $query = "update from produto SET nome=:nome, email=:email, senha=:senha, cargo=:cargo, foto=:foto WHERE id=:id";
        $excluir = $conn->getConn()->prepare($query);
+       $excluir->bindParam(':id',$id,PDO::PARAM_STR);
+       $excluir->bindParam(':nome',$nome,PDO::PARAM_STR);
+       $excluir->bindParam(':email',$email,PDO::PARAM_STR);
+       $excluir->bindParam(':senha',$senha,PDO::PARAM_STR);
+       $excluir->bindParam(':cargo',$cargo,PDO::PARAM_STR);
+       $excluir->bindParam(':foto',$foto,PDO::PARAM_STR);
        $excluir->execute();
        if ($excluir) {
-        echo "<script>alert('Produto excluído com sucesso');</script>";
-        echo "<a href='../view/telamenu.php'>Voltar</a>";
+        echo "<script>alert('Dados editados com sucesso');</script>";
+        echo "<a href='../view/menu.php'>Voltar</a>";
     } else {
         echo "<script>alert('Dado não encontado');</script>";
     }

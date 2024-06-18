@@ -20,9 +20,7 @@ $foto = $dados->getFoto();
 if($dados->getNome() != "")
 {
        $conn = new Conexao;
-       $query = "insert into funcionario(nome, email, senha, cargo, foto)
-       values
-       (:nome, :email, :senha, :cargo, :foto)";
+       $query = "insert into funcionario(nome, email, senha, cargo, foto) values(:nome, :email, :senha, :cargo, :foto)";
        $cadastrar = $conn->getConn()->prepare($query);
        $cadastrar->bindParam(':nome',$nome,PDO::PARAM_STR);
        $cadastrar->bindParam(':email',$email,PDO::PARAM_STR);

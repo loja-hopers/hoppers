@@ -72,15 +72,29 @@ $idFuncionario = $_SESSION['id'];
 
 <body>
     <div>
-        <?php
-            echo "ID: ". $idFuncionario;
-        ?>
         
-        <h3>Funcionarios</h3>
+        <h3>Menu</h3>
 
-        <div class='row'>
-            <?php include_once '../model/listarFuncionarios.php'; ?>
-        </div>
+        <a href="cadastroFuncionario.php">
+        Cadastrar Funcionario
+        </a>
+
+        <br>
+        <a href="listaFuncionarios.php">
+            Listar todos os funcionarios
+        </a>
+        <br>
+
+        <hr>
+        <a href="cadastroProduto.php">
+            Cadastrar Produto
+        </a>
+       
+        <br>
+        <a href="produtos.php">
+            Listar todos os produtos
+        </a>
+        <br>
     </div>
     
 

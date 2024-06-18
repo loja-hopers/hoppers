@@ -10,7 +10,7 @@
             return $this->id;
         }
 
-        public function getDataGestao(){
+        public function getData(){
             return $this->dataGestao;
         }
 

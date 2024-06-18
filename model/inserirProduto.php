@@ -1,6 +1,11 @@
 <?php
 include_once "../factory/conexao.php";
 include_once "../control/produto.php";
+include_once "../control/historico.php";
+
+session_start();
+
+$dados = new Historico;
 
 $dados = new Produto;
 
@@ -26,7 +31,18 @@ if($dados->getDescricao() != "")
        $cadastrar->execute();
        if($cadastrar->rowCount())
        {
-               echo "Dados cadastrados com sucesso!"; 
+            echo "Dados cadastrados com sucesso!";
+            $historico = new Historico;
+
+
+            $historico->setDescricao($_POST["inserção de produto"]);
+            $dados->setProdutoId();
+            $dados->setFuncionarioId($_SESSION['id']);
+
+            $descricao = $dados->getDescricao();
+            $idFuncionario = $dados->getProdutoId();
+            $idProduto = $dados->getFuncionarioId();
+
        }
        else{
           echo "Dados não cadastrados";

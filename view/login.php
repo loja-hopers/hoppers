@@ -77,7 +77,7 @@
                 echo "<p class='mensagem-erro'>$mensagemErro</p>";
             }
             ?>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <form action="../model/verificarLogin.php" method="post">
                 <div class="input-field">
                     <input type="text" id="usuario" name="usuario" required>
                     <label for="usuario">Usuário</label>

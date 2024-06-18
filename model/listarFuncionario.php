@@ -14,8 +14,6 @@ function mostrarDados($dados) {
     echo "</div>";
     echo "<div class='card-action'>";
     echo "<p class='preco'>{$dados['cargo']}</p>";
-    echo "<p class='preco'>editar</p>";
-    echo "<p class='preco'>excluir</p>";
     echo "</div>";
     echo "</div>";
     echo "</div>";

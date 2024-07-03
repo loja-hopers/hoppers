@@ -4,8 +4,6 @@ include_once '../factory/conexao.php';
 
 session_start();
 
-$idFuncionario = $_SESSION['id'];
-
 
 ?>
 

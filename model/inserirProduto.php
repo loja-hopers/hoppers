@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $dados = new Produto;
 
     $historico = new Historico;
+    $idFuncionario = $_SESSION['id'];
     $descricaoHistorico = "Produto inserido";
 
     $dados->setDescricao($_POST["cxdescricao"]);
@@ -60,11 +61,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 if ($cadastrar->rowCount()) {
                     // Insere o histórico da inserção do produto
+                    $idProduto = $conn->getConn()->lastInsertId();
                     $query = "INSERT INTO historico(descricao, id_funcionario, id_produto) VALUES (:descricao, :idFuncionario, :idProduto)";
                     $historico = $conn->getConn()->prepare($query);
+
                     $historico->bindParam(':descricao', $descricaoHistorico, PDO::PARAM_STR);
                     $historico->bindParam(':idFuncionario', $idFuncionario, PDO::PARAM_INT);
-                    $historico->bindParam(':idProduto', $id, PDO::PARAM_INT);
+                    $historico->bindParam(':idProduto', $idProduto, PDO::PARAM_INT);
                     $historico->execute();
                     echo "<script>alert('Produto cadastrado com sucesso');
                     location.href = '../view/produtos.php';</script>";

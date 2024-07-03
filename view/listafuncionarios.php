@@ -1,10 +1,9 @@
 <?php
-include_once '../components/headerAdm.php';
+include_once '../components/header.php';
 include_once '../factory/conexao.php';
 
 session_start();
 
-$idFuncionario = $_SESSION['id'];
 
 
 ?>

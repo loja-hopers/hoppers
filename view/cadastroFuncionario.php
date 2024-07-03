@@ -38,9 +38,9 @@ $cargos = getEnumValues($conexao, 'funcionario', 'cargo');
     Nome:<br>
     <input type="text" name="cxnome"><br/>
     E-mail:<br/>
-    <input type="text" name="cxemail"/><br/>
+    <input type="email" name="cxemail"/><br/>
     Senha:<br/>
-    <input type="text" name="cxsenha"/><br/>
+    <input type="password" name="cxsenha"/><br/>
     Cargo:<br/>
     <select id="cargo" name="cxcargo" required>
         <?php

@@ -80,7 +80,7 @@ if (isset($_POST["id"], $_POST["descricao"], $_POST["preco"])) {
             $historico = $conn->getConn()->prepare($query);
             $historico->bindParam(':descricao', $descricaoHistorico, PDO::PARAM_STR);
             $historico->bindParam(':idFuncionario', $idFuncionario, PDO::PARAM_INT);
-            $historico->bindParam(':idProduto', $id, PDO::PARAM_INT);
+            $historico->bindParam(':idProduto', $idProduto, PDO::PARAM_INT);
             $historico->execute();
             echo "<script>alert('Produto atualizado com sucesso');
             location.href = '../view/produtos.php';</script>";

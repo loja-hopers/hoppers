@@ -17,7 +17,7 @@
         <div class="col l4 offset-l2 s12">
           <h5 id="fot" class="white-text">Links</h5>
               <ul id="list_fot">
-                <li><a class="grey-text text-lighten-3" href="login.php">Funcionários</a></li>                                 
+                <li><a class="grey-text text-lighten-3" href="login.php">Login</a></li>                                 
               </ul>
         </div>
       </div>

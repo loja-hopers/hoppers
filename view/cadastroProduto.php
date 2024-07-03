@@ -8,13 +8,13 @@
 </head>
 <body>
 
-    <form action="../model/inserirProduto.php" method="POST">
+    <form action="../model/inserirProduto.php" method="POST" enctype="multipart/form-data">
     Descrição:<br>
     <input type="text" name="cxdescricao"/><br/>
     Preço:<br/>
     <input type="text" name="cxpreco"/><br/>
-    Imagem:<br/>
-    <input type="text" name="cximagem"/><br/>
+    Escolha uma imagem:
+    <input type="file" name="cximagem" id="cximagem"><br><br>
     <button>Cadastrar</button>
     </form>    
 </body>

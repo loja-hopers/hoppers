@@ -89,7 +89,6 @@
                 <button type="submit" class="btn">Entrar</button>
             </form>
 
-            <a href="insereFuncionario.php" class="register">Registre-se!</a>
         </div>
     </div>
 

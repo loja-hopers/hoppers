@@ -7,7 +7,7 @@ function mostrarDados($dados) {
     echo "<div class='col s12 m4'>";
     echo "<div class='card'>";
     echo "<div class='card-image'>";
-    echo "<img src='../img/{$dados['imagem']}.webp'><br>";
+    echo "<img src='../img/" . $dados['imagem'] . "'><br>";
     echo "</div>";
     echo "<div class='card-content'>";
     echo "<p>{$dados['descricao']}</p>";

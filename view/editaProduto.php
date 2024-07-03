@@ -2,8 +2,6 @@
 include_once '../components/header.php';
 include_once '../factory/conexao.php';
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +12,7 @@ include_once '../factory/conexao.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Funcionarios</title>
+    <title>Editar Produto</title>
     <style>
         body {
             background-color: #fff;
@@ -74,37 +72,35 @@ include_once '../factory/conexao.php';
 </head>
 
 <body>
-    <h1>Editar Funcionário</h1>
+    <h1>Editar Produto</h1>
 
     <div>
         <?php
-            $idFuncionario = $_GET['id'];
-            $query = "SELECT * FROM funcionario WHERE id = :id";
-            $conn = new Conexao;
-            $consulta = $conn->getConn()->prepare($query);
-            $consulta->bindParam(':id', $idFuncionario, PDO::PARAM_INT);
-            $consulta->execute();
+        $idProduto = $_GET['id'];
+        $conn = new Conexao;
+        $query = "SELECT * FROM produto WHERE id = :id";
+        $consulta = $conn->getConn()->prepare($query);
+        $consulta->bindParam(':id', $idProduto, PDO::PARAM_INT);
+        $consulta->execute();
 
-            while ($row = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            ?>
-                <form action="../model/editarFuncionario.php" method="POST" enctype="multipart/form-data">
-                    <input type="hidden" name="id" value="<?= $idFuncionario ?>">
-                    Nome:<br>
-                    <input type="text" name="cxnome" value="<?= $row['nome'] ?>"><br/>
-                    E-mail:<br/>
-                    <input type="text" name="cxemail" value=" <?= $row['email'] ?>"/><br/>
-                    Senha:<br/>
-                    <input type="text" name="cxsenha" value="<?= $row['senha'] ?>"/><br/>
-                    <br>
-                    <img src="../img/<?= $row['foto'] ?>" alt="Imagem atual" width="100"><br />
-                    <br>
-                    <label for="imagem">Escolha uma imagem:</label>
-                    <input type="file" name="cxfoto" id="cxfoto"><br><br>
-                    <button>Editar</button>
-                </form>
-            <?php
-            }
-            ?>
+        while ($row = $consulta->fetch(PDO::FETCH_ASSOC)) {
+        ?>
+            <form action="../model/editarProduto.php" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<?= $row['id'] ?>"><br />
+                Descrição:<br>
+                <input type="text" name="descricao" value="<?= $row['descricao'] ?>"><br />
+                Preço:<br />
+                <input type="text" name="preco" value="<?= $row['preco'] ?>"><br />
+                Imagem atual:<br />
+                <img src="../img/<?= $row['imagem'] ?>" alt="Imagem atual" width="100"><br />
+                Escolha uma nova imagem:<br />
+                <input type="file" name="imagem"><br /><br />
+
+                <button type="submit">Editar</button>
+            </form>
+        <?php
+        }
+        ?>
     </div>
 
     <?php include_once "../components/footer.php"; ?>

@@ -34,9 +34,9 @@ $cargos = getEnumValues($conexao, 'funcionario', 'cargo');
 <body>
 
     <div class="container">
-    <form action="../model/inserirFuncionario.php" method="POST">
+    <form action="../model/inserirFuncionario.php" method="POST" enctype="multipart/form-data">
     Nome:<br>
-    <input type="text" name="cxnome"/><br/>
+    <input type="text" name="cxnome"><br/>
     E-mail:<br/>
     <input type="text" name="cxemail"/><br/>
     Senha:<br/>
@@ -50,8 +50,8 @@ $cargos = getEnumValues($conexao, 'funcionario', 'cargo');
         ?>
     </select>
     <br>
-    Foto:<br/>
-    <input type="text" name="cxfoto"/><br/>
+    Escolha uma imagem:
+    <input type="file" name="cxfoto" id="cxfoto"><br><br>
     <button>Cadastrar</button>
     </form>    
 

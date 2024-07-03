@@ -1,19 +1,11 @@
 <?php
-include_once '../components/header.php';
+include_once '../components/headerAdm.php';
 include_once '../factory/conexao.php';
 
 session_start();
 
 $idFuncionario = $_SESSION['id'];
 
-//echo "<h1 class='center-align'>Consultando Funcionários</h1>";
-
-// $dado = '%a%';
-
-// $sql = "SELECT * FROM tabfuncionarios WHERE funNome LIKE '$dado' ORDER BY funNome";
-
-// $consulta = $conn->prepare($sql);
-// $consulta->execute();
 
 ?>
 
@@ -72,11 +64,10 @@ $idFuncionario = $_SESSION['id'];
 
 <body>
     <div>
-        <?php
-            echo "ID: ". $idFuncionario;
-        ?>
         
         <h3>Funcionarios</h3>
+
+        <a href="cadastroFuncionario.php">Cadastrar Funcionário</a>
 
         <div class='row'>
             <?php include_once '../model/listarFuncionarios.php'; ?>

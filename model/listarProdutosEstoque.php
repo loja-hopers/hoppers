@@ -7,7 +7,7 @@ function mostrarDados($dados) {
     echo "<div class='col s12 m4'>";
     echo "<div class='card'>";
     echo "<div class='card-image'>";
-    echo "<img src='../img/{$dados['imagem']}.webp'><br>";
+    echo "<img src='../img/" . $dados['imagem'] . "'><br>";
     echo "</div>";
     echo "<div class='card-content'>";
     echo "<p>{$dados['descricao']}</p>";
@@ -15,7 +15,7 @@ function mostrarDados($dados) {
     echo "<div class='card-action'>";
     echo "<p class='preco'>R$"."{$dados['preco']}</p>";
     echo "<td><a href='../view/editaProduto.php?id={$dados['id']}' class='btn-floating orange'><i class='material-icons'>edit</i></a></td>";
-    echo "<td><a href='../view/removeProduto.php?id={$dados['id']}' class='btn-floating blue'><i class='material-icons'>delete</i></a></td></tr>";
+    echo "<td><a href='../model/excluirProduto.php?id={$dados['id']}' class='btn-floating blue'><i class='material-icons'>delete</i></a></td></tr>";
     echo "</div>";
     echo "</div>";
     echo "</div>";
@@ -33,6 +33,7 @@ $produtos = [];
 if ($listar->rowCount() > 0) {
     while ($linha = $listar->fetch(PDO::FETCH_ASSOC)) {
         $produto = new Produto;
+        $produto->setId($linha['id']);
         $produto->setDescricao($linha['descricao']);
         $produto->setPreco($linha['preco']);
         $produto->setImagem($linha['imagem']);
@@ -41,6 +42,7 @@ if ($listar->rowCount() > 0) {
     
     foreach ($produtos as $produto) {
         mostrarDados([
+            'id' => $produto->getId(),
             'descricao' => $produto->getDescricao(),
             'preco' => $produto->getPreco(),
             'imagem' => $produto->getImagem()

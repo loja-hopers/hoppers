@@ -6,15 +6,6 @@ session_start();
 
 $idFuncionario = $_SESSION['id'];
 
-//echo "<h1 class='center-align'>Consultando Funcionários</h1>";
-
-// $dado = '%a%';
-
-// $sql = "SELECT * FROM tabfuncionarios WHERE funNome LIKE '$dado' ORDER BY funNome";
-
-// $consulta = $conn->prepare($sql);
-// $consulta->execute();
-
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +25,7 @@ $idFuncionario = $_SESSION['id'];
 
         img {
             width: 100%;
-            max-width: 150px; /* Ajuste conforme necessário */
+            max-width: 150px;
             height: auto;
         }
 
@@ -60,12 +51,12 @@ $idFuncionario = $_SESSION['id'];
         }
 
         form button {
-            background-color: #DF696E; /* Cor do botão rosa mais escuro */
-            color: white; /* Cor do texto branco */
+            background-color: #DF696E;
+            color: white;
         }
 
         form button:hover {
-            background-color: #D6656B; /* Cor do botão rosa mais escura ao passar o mouse */
+            background-color: #D6656B;
         }
     </style>
 </head>

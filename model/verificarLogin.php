@@ -14,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $conn = new Conexao;
 
-    
 
     $sql = "SELECT * FROM funcionario WHERE email = :email AND senha = :senha";
     $stmt = $conn->getConn()->prepare($sql);

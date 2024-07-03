@@ -20,13 +20,8 @@ include_once '../factory/conexao.php';
         <h3>Roupas disponíveis</h3>
         <hr>
 
-        <br>
-        <a href="cadastroProduto.php">Cadastrar Produto</a>
-        <br>
-        <br>
-
         <div class='row'>
-            <?php include_once '../model/listarProdutosEstoque.php'; ?>
+            <?php include_once '../model/listarProdutos.php'; ?>
         </div>
         
     </div>

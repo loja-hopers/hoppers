@@ -28,7 +28,7 @@
         }
 
         public function getFoto(){
-            return $this->id;
+            return $this->foto;
         }
 
         public function setId($id){

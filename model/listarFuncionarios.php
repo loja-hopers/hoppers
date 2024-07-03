@@ -10,7 +10,26 @@ $conn = new Conexao;
 $listar = $conn->getConn()->prepare('SELECT * FROM funcionario');
 $listar->execute();
 
-$funcionarios = []; 
+function mostrarDados($dados) {
+    echo "<div class='col s12 m4'>";
+    echo "<div class='card'>";
+    echo "<div class='card-image'>";
+    echo "<img src='../img/" . $dados['foto'] . "'><br>";
+    echo "</div>";
+    echo "<div class='card-content'>";
+    echo "<p>{$dados['nome']}</p>";
+    echo "</div>";
+    echo "<div class='card-action'>";
+    echo "<p class='preco'>{$dados['cargo']}</p>";
+    echo "<td><a href='../view/editaFuncionario.php?id={$dados['id']}' class='btn-floating orange'><i class='material-icons'>edit</i></a></td>";
+    echo "<td><a href='../model/excluirFuncionario.php?id={$dados['id']}' class='btn-floating blue'><i class='material-icons'>delete</i></a></td></tr>";
+    echo "</div>";
+    echo "</div>";
+    echo "</div>";
+}
+
+$funcionarios = [];
+
 
 if ($listar->rowCount() > 0) {
     while ($linha = $listar->fetch(PDO::FETCH_ASSOC)) {
